@@ -19,7 +19,7 @@ function FindProxyForURL(url, host)
         shExpMatch(host, "*.imgbox.com") || 
         shExpMatch(host, "*.dropbox.com") || 
         shExpMatch(host, "www.alliance.org.hk") || 
-        shExpMatch(host, "www.scmp.com") || 
+        shExpMatch(host, "*.scmp.com") || 
         shExpMatch(host, "chinadigitaltimes.net"))
     {
         return "SOCKS5 10.10.1.29:9152; SOCKS 10.10.1.29:9152; DIRECT";
