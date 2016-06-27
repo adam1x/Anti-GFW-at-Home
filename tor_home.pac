@@ -21,7 +21,8 @@ function FindProxyForURL(url, host)
         shExpMatch(host, "www.alliance.org.hk") || 
         shExpMatch(host, "*.scmp.com") || 
         shExpMatch(host, "chinadigitaltimes.net") || 
-        shExpMatch(host, "evchk.wikia.com"))
+        shExpMatch(host, "evchk.wikia.com") || 
+        shExpMatch(host, "www.putty.org"))
     {
         return "SOCKS5 10.10.1.29:9152; SOCKS 10.10.1.29:9152; DIRECT";
     }
