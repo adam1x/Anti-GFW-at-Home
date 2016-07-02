@@ -15,7 +15,6 @@ function FindProxyForURL(url, host)
         shExpMatch(host, "*.reutersmedia.com") || 
         shExpMatch(host, "*.bbci.co.uk") || 
         shExpMatch(host, "theinitium.com") || 
-        shExpMatch(host, "vr.google.com") || 
         shExpMatch(host, "*.imgbox.com") || 
         shExpMatch(host, "*.dropbox.com") || 
         shExpMatch(host, "www.alliance.org.hk") || 
