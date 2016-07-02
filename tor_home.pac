@@ -22,9 +22,9 @@ function FindProxyForURL(url, host)
         shExpMatch(host, "chinadigitaltimes.net") || 
         shExpMatch(host, "evchk.wikia.com") || 
         shExpMatch(host, "www.putty.org") || 
-		shExpMatch(host, "chinapower.csis.org") || 
-		shExpMatch(host, "www.malwaretech.com") || 
-		shExpMatch(host, "*.tumblr.com"))
+        shExpMatch(host, "chinapower.csis.org") || 
+        shExpMatch(host, "www.malwaretech.com") || 
+        shExpMatch(host, "*.tumblr.com"))
     {
         return "SOCKS5 127.0.0.1:9150; SOCKS 127.0.0.1:9150; SOCKS5 10.10.1.29:9152; SOCKS 10.10.1.29:9152; DIRECT";
     }
