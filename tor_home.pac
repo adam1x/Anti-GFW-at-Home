@@ -24,7 +24,8 @@ function FindProxyForURL(url, host)
         shExpMatch(host, "www.putty.org") || 
         shExpMatch(host, "chinapower.csis.org") || 
         shExpMatch(host, "www.malwaretech.com") || 
-        shExpMatch(host, "*.tumblr.com"))
+        shExpMatch(host, "*.tumblr.com") || 
+        shExpMatch(host, "www.jpl.nasa.gov"))
     {
         return "SOCKS5 127.0.0.1:9150; SOCKS 127.0.0.1:9150; SOCKS5 10.10.1.29:9150; SOCKS 10.10.1.29:9150; DIRECT";
     }
