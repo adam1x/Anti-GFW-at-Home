@@ -10,9 +10,15 @@ function FindProxyForURL(url, host)
     //     return "DIRECT";
     // }
 
-    // if (myIpAddress() == "10.10.1.29")
-    
-    alert(myIpAddress());
+    var proxy;
+    if (myIpAddress() == "10.10.1.29")
+    {
+        proxy = "SOCKS5 127.0.0.1:9150; SOCKS 127.0.0.1:9150; ";
+    }
+    else
+    {
+        proxy = "SOCKS5 10.10.1.29:9150; SOCKS 10.10.1.29:9150; ";
+    }
     
     if (shExpMatch(host, "check.torproject.org")
      || shExpMatch(host, "*.nytimes.com")
@@ -35,7 +41,7 @@ function FindProxyForURL(url, host)
      || shExpMatch(host, "www.malwaretech.com")
     )
     {
-        return "SOCKS5 127.0.0.1:9150; SOCKS 127.0.0.1:9150; SOCKS5 10.10.1.29:9150; SOCKS 10.10.1.29:9150; DIRECT";
+        return proxy + "DIRECT";
     }
 
     return "DIRECT";
