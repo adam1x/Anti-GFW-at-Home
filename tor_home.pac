@@ -10,6 +10,10 @@ function FindProxyForURL(url, host)
     //     return "DIRECT";
     // }
 
+    // if (myIpAddress() == "10.10.1.29")
+    
+    alert(myIpAddress());
+    
     if (shExpMatch(host, "check.torproject.org")
      || shExpMatch(host, "*.nytimes.com")
      || shExpMatch(host, "*.reuters.com")
