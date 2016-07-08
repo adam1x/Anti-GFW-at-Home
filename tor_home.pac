@@ -10,22 +10,26 @@ function FindProxyForURL(url, host)
     //     return "DIRECT";
     // }
 
-    if (shExpMatch(host, "*.nytimes.com") || 
-        shExpMatch(host, "*.reuters.com") || 
-        shExpMatch(host, "*.reutersmedia.com") || 
-        shExpMatch(host, "*.bbci.co.uk") || 
-        shExpMatch(host, "theinitium.com") || 
-        shExpMatch(host, "*.imgbox.com") || 
-        shExpMatch(host, "*.dropbox.com") || 
-        shExpMatch(host, "www.alliance.org.hk") || 
-        shExpMatch(host, "*.scmp.com") || 
-        shExpMatch(host, "chinadigitaltimes.net") || 
-        shExpMatch(host, "evchk.wikia.com") || 
-        shExpMatch(host, "www.putty.org") || 
-        shExpMatch(host, "chinapower.csis.org") || 
-        shExpMatch(host, "www.malwaretech.com") || 
-        shExpMatch(host, "*.tumblr.com") || 
-        shExpMatch(host, "*.jpl.nasa.gov"))
+    if (shExpMatch(host, "check.torproject.org")
+     || shExpMatch(host, "*.nytimes.com")
+     || shExpMatch(host, "*.reuters.com")
+     || shExpMatch(host, "*.reutersmedia.com")
+     || shExpMatch(host, "*.bbci.co.uk")
+     || shExpMatch(host, "theinitium.com")
+     || shExpMatch(host, "*.scmp.com")
+     || shExpMatch(host, "www.alliance.org.hk")
+     || shExpMatch(host, "www.64memo.com")
+     || shExpMatch(host, "www.tiananmenmother.org")
+     || shExpMatch(host, "chinadigitaltimes.net")
+     || shExpMatch(host, "evchk.wikia.com")
+     || shExpMatch(host, "chinapower.csis.org")
+     || shExpMatch(host, "*.tumblr.com")
+     || shExpMatch(host, "*.jpl.nasa.gov")
+     || shExpMatch(host, "*.dropbox.com")
+     || shExpMatch(host, "www.putty.org")
+     || shExpMatch(host, "*.imgbox.com")
+     || shExpMatch(host, "www.malwaretech.com")
+    )
     {
         return "SOCKS5 127.0.0.1:9150; SOCKS 127.0.0.1:9150; SOCKS5 10.10.1.29:9150; SOCKS 10.10.1.29:9150; DIRECT";
     }
