@@ -43,6 +43,7 @@ function FindProxyForURL(url, host)
      || shExpMatch(host, "www.putty.org")
      || shExpMatch(host, "*.imgbox.com")
      || shExpMatch(host, "www.malwaretech.com")
+     || shExpMatch(host, "www.southwest.com")
      || shExpMatch(host, "*.onion")
     )
     {
