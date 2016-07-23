@@ -22,6 +22,7 @@ function FindProxyForURL(url, host)
     
     if (shExpMatch(host, "check.torproject.org")
      || shExpMatch(host, "*.nytimes.com")
+     || shExpMatch(host, "*.nyt.com")
      || shExpMatch(host, "*.reuters.com")
      || shExpMatch(host, "*.reutersmedia.com")
      || shExpMatch(host, "*.bbci.co.uk")
