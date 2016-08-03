@@ -47,6 +47,7 @@ function FindProxyForURL(url, host)
      || shExpMatch(host, "www.malwaretech.com")
      || shExpMatch(host, "*.southwest.com")
      || shExpMatch(host, "www.mobile01.com")
+     || shExpMatch(host, "www.ucptt.com")
      || shExpMatch(host, "*.onion")
     )
     {
