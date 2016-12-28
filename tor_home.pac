@@ -11,22 +11,27 @@ function FindProxyForURL(url, host)
     // }
 
     var proxy;
-    if (myIpAddress() == "10.10.1.29")
+    if (myIpAddress() == "10.10.1.52")
     {
-        proxy = "SOCKS5 127.0.0.1:9150; SOCKS 127.0.0.1:9150; ";
+        proxy = "SOCKS5 127.0.0.1:9050; SOCKS 127.0.0.1:9050";
     }
     else
     {
-        proxy = "SOCKS5 10.10.1.29:9150; SOCKS 10.10.1.29:9150; ";
+        proxy = "SOCKS5 10.10.1.52:9100; SOCKS 10.10.1.52:9100";
+    }
+
+    if (shExpMatch(host, "check.torproject.org"))
+    {
+        return proxy + "; DIRECT";
     }
     
-    if (shExpMatch(host, "check.torproject.org")
-     || shExpMatch(host, "*.nytimes.com")
-     || shExpMatch(host, "*.nyt.com")
+    if (shExpMatch(host, "*.nytimes.com")
+     || shExpMatch(url, "http://*.nyt.com/*")
      || shExpMatch(host, "*.reuters.com")
      || shExpMatch(host, "*.reutersmedia.com")
      || shExpMatch(host, "*.bbci.co.uk")
      || shExpMatch(host, "time.com")
+     || shExpMatch(host, "*.economist.com")
      || shExpMatch(host, "*.dw.com")
      || shExpMatch(host, "theinitium.com")
      || shExpMatch(host, "*.scmp.com")
@@ -46,12 +51,18 @@ function FindProxyForURL(url, host)
      || shExpMatch(host, "*.imgbox.com")
      || shExpMatch(host, "www.malwaretech.com")
      || shExpMatch(host, "*.southwest.com")
+     || shExpMatch(host, "twitter.com")
+     || shExpMatch(host, "*.twitter.com")
+     || shExpMatch(host, "syndication.twimg.com")
+     || shExpMatch(host, "cdn.syndication.twimg.com")
+     || shExpMatch(host, "syndication-o.twimg.com")
+     || shExpMatch(host, "image-proxy-origin.twimg.com")
      || shExpMatch(host, "www.mobile01.com")
      || shExpMatch(host, "www.ucptt.com")
      || shExpMatch(host, "*.onion")
     )
     {
-        return proxy + "DIRECT";
+        return proxy;
     }
 
     return "DIRECT";
