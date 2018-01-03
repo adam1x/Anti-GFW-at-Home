@@ -1,20 +1,20 @@
 function FindProxyForURL(url, host)
 {
     var proxy;
-    if (myIpAddress() == "10.10.1.52")
+    if (myIpAddress() == "10.10.1.104")
     {
         proxy = "SOCKS5 127.0.0.1:9050; SOCKS 127.0.0.1:9050";
     }
     else
     {
-        proxy = "SOCKS5 10.10.1.52:9100; SOCKS 10.10.1.52:9100";
+        proxy = "SOCKS5 10.10.1.104:9100; SOCKS 10.10.1.104:9100";
     }
 
     if (shExpMatch(host, "check.torproject.org"))
     {
         return proxy + "; DIRECT";
     }
-    
+
     if (shExpMatch(host, "*.nytimes.com")
      || shExpMatch(url, "http://*.nyt.com/*")
      || shExpMatch(host, "*.reuters.com")
@@ -49,6 +49,7 @@ function FindProxyForURL(url, host)
      || shExpMatch(host, "image-proxy-origin.twimg.com")
      || shExpMatch(host, "www.mobile01.com")
      || shExpMatch(host, "www.ucptt.com")
+     || shExpMatch(url, "http://steamcommunity.com/*")
      || shExpMatch(host, "*.onion")
     )
     {
